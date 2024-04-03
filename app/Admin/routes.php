@@ -1,5 +1,8 @@
 <?php
 
+use App\Admin\Controllers\ItemController;
+use App\Admin\Controllers\SizeController;
+use App\Admin\Controllers\StyleController;
 use Illuminate\Routing\Router;
 
 Admin::routes();
@@ -12,5 +15,9 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
+    $router->resource('colors', \App\Admin\Controllers\ColorsController::class);
+    $router->resource('sizes', SizeController::class);
+    $router->resource('styles', StyleController::class);
+    $router->resource('items', ItemController::class);
 
 });
