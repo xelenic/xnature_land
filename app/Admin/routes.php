@@ -1,6 +1,8 @@
 <?php
 
 use App\Admin\Controllers\ItemController;
+use App\Admin\Controllers\LocationController;
+use App\Admin\Controllers\RouteController;
 use App\Admin\Controllers\SizeController;
 use App\Admin\Controllers\StyleController;
 use Illuminate\Routing\Router;
@@ -19,5 +21,7 @@ Route::group([
     $router->resource('sizes', SizeController::class);
     $router->resource('styles', StyleController::class);
     $router->resource('items', ItemController::class);
+    $router->resource('locations', LocationController::class);
+    $router->resource('routes', RouteController::class);
 
 });
