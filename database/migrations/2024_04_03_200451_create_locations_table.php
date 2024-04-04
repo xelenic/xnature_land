@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('location_code');
             $table->text('location_description')->nullable();
             $table->text('gps_coordinates')->nullable();
-            $table->text('status');
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });
     }

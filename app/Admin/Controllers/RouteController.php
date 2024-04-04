@@ -33,8 +33,8 @@ class RouteController extends AdminController
         $grid->column('distance', __('Distance'));
         $grid->column('description', __('Description'));
         $grid->column('status', __('Status'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('created_at', __('Created at'))->hide();
+        $grid->column('updated_at', __('Updated at'))->hide();
 
         return $grid;
     }
@@ -71,12 +71,12 @@ class RouteController extends AdminController
     {
         $form = new Form(new Route());
 
-        $form->textarea('name', __('Name'));
-        $form->number('start_location_id', __('Start location id'));
-        $form->number('end_location_id', __('End location id'));
-        $form->textarea('distance', __('Distance'));
+        $form->text('name', __('Name'))->required();
+        $form->select('start_location_id', __('Start location'))->options(\App\Models\Location::where('status','active')->pluck('location_name', 'id'))->required();
+        $form->select('end_location_id', __('End location'))->options(\App\Models\Location::where('status','active')->pluck('location_name', 'id'))->required();
+        $form->text('distance', __('Distance'));
         $form->textarea('description', __('Description'));
-        $form->text('status', __('Status'))->default('active');
+        $form->select('status', __('Status'))->options(['active'=>'active', 'inactive'=>'inactive'])->default('active')->required();
 
         return $form;
     }

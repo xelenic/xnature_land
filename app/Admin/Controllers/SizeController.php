@@ -31,8 +31,8 @@ class SizeController extends AdminController
         $grid->column('size_name', __('Size name'));
         $grid->column('size_description', __('Size description'));
         $grid->column('status', __('Status'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('created_at', __('Created at'))->hide();
+        $grid->column('updated_at', __('Updated at'))->hide();
 
         return $grid;
     }

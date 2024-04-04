@@ -31,8 +31,8 @@ class StyleController extends AdminController
         $grid->column('style_name', __('Style name'));
         $grid->column('style_description', __('Style description'));
         $grid->column('status', __('Status'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('created_at', __('Created at'))->hide();
+        $grid->column('updated_at', __('Updated at'))->hide();
 
         return $grid;
     }

@@ -23,5 +23,7 @@ Route::group([
     $router->resource('items', ItemController::class);
     $router->resource('locations', LocationController::class);
     $router->resource('routes', RouteController::class);
+    $router->resource('shops', ShopController::class);
+
 
 });

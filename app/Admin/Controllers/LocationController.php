@@ -32,8 +32,8 @@ class LocationController extends AdminController
         $grid->column('location_description', __('Location description'));
         $grid->column('gps_coordinates', __('Gps coordinates'));
         $grid->column('status', __('Status'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('created_at', __('Created at'))->hide();
+        $grid->column('updated_at', __('Updated at'))->hide();
 
         return $grid;
     }

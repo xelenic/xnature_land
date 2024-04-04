@@ -31,8 +31,8 @@ class ColorsController extends AdminController
         $grid->column('color_name', __('Color name'));
         $grid->column('color_description', __('Color description'));
         $grid->column('status', __('Status'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('created_at', __('Created at'))->hide();
+        $grid->column('updated_at', __('Updated at'))->hide();
 
         return $grid;
     }
