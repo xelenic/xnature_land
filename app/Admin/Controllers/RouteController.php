@@ -28,8 +28,6 @@ class RouteController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'));
-        $grid->column('start_location_id', __('Start location id'));
-        $grid->column('end_location_id', __('End location id'));
         $grid->column('distance', __('Distance'));
         $grid->column('description', __('Description'));
         $grid->column('status', __('Status'));
@@ -51,8 +49,6 @@ class RouteController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('name', __('Name'));
-        $show->field('start_location_id', __('Start location id'));
-        $show->field('end_location_id', __('End location id'));
         $show->field('distance', __('Distance'));
         $show->field('description', __('Description'));
         $show->field('status', __('Status'));
@@ -72,8 +68,6 @@ class RouteController extends AdminController
         $form = new Form(new Route());
 
         $form->text('name', __('Name'))->required();
-        $form->select('start_location_id', __('Start location'))->options(\App\Models\Location::where('status','active')->pluck('location_name', 'id'))->required();
-        $form->select('end_location_id', __('End location'))->options(\App\Models\Location::where('status','active')->pluck('location_name', 'id'))->required();
         $form->text('distance', __('Distance'));
         $form->textarea('description', __('Description'));
         $form->select('status', __('Status'))->options(['active'=>'active', 'inactive'=>'inactive'])->default('active')->required();

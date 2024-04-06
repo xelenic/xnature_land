@@ -48,7 +48,7 @@ class MenuSeeder extends Seeder
             [
                 'parent_id' => 0,
                 'order' => 15,
-                'title' => 'Items',
+                'title' => 'Main Stock',
                 'icon' => 'icon-list-alt',
                 'uri' => '/items',
                 'created_at' => '2024-04-03 08:11:09',
@@ -63,15 +63,7 @@ class MenuSeeder extends Seeder
                 'created_at' => '2024-04-03 08:11:09',
                 'updated_at' => '2024-04-03 08:11:09',
             ],
-            [
-                'parent_id' => 0,
-                'order' => 16,
-                'title' => 'Locations',
-                'icon' => 'icon-list-alt',
-                'uri' => '/locations',
-                'created_at' => '2024-04-03 08:11:09',
-                'updated_at' => '2024-04-03 08:11:09',
-            ],
+
             [
                 'parent_id' => 0,
                 'order' => 17,

@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('routes', function (Blueprint $table) {
             $table->id();
             $table->text('name');
-            $table->foreignId('start_location_id')->constrained('locations');
-            $table->foreignId('end_location_id')->constrained('locations');
             $table->text('distance')->nullable();
             $table->text('description')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');

@@ -21,7 +21,6 @@ Route::group([
     $router->resource('sizes', SizeController::class);
     $router->resource('styles', StyleController::class);
     $router->resource('items', ItemController::class);
-    $router->resource('locations', LocationController::class);
     $router->resource('routes', RouteController::class);
     $router->resource('shops', ShopController::class);
 
